@@ -1,0 +1,4 @@
+ docker login -u sharks2001 -p Kiarithaini
+Use the docker tag command to give the getting-started image a new name. Be sure to swap out YOUR-USER-NAME with your Docker ID.
+
+docker run -dp 3000:3000 YOUR-USER-NAME/getting-started

@@ -1,0 +1,64 @@
+Loop and Save to Database
+'For Each tb As TextBox In Panel1.Controls.OfType(Of TextBox)()
+'    'Check if the Additional Textbox are empty
+'    If tb.Text <> String.Empty Then
+'        Dim addCntlsQuery As String = "INSERT INTO gsmrt_whse_wkshp_supplier_addnl_contacts(SPLR_REF,SPLR_EMAIL)VALUES(@SPLRID,@SPLREMAIL)"
+'        Dim addCntlsCmd As MySqlCommand = New MySqlCommand(addCntlsQuery, conn)
+'        addCntlsCmd.Parameters.AddWithValue("@SPLRID", lastID)
+'        addCntlsCmd.Parameters.AddWithValue("@SPLREMAIL", tb.Text)
+'        addCntlsCmd.ExecuteNonQuery()
+'    End If
+'Next
+
+
+'Private Sub addContactsBtn_Click(sender As Object, e As EventArgs) Handles addContactsBtn.Click
+    '    Panel1.Visible = True
+    '    'Create the dynamic TextBox.
+    '    Dim textbox As TextBox = New TextBox
+
+    '    Dim position As Integer = 164
+    '    Dim count As Integer = Panel1.Controls.OfType(Of TextBox).ToList.Count
+    '    'Limit Number of Additional TextBox Controls to 4
+    '    If count <> 4 Then
+    '        textbox.Location = New System.Drawing.Point(0, (25 * count))
+    '        textbox.Size = New System.Drawing.Size(192, 20)
+    '        textbox.Name = "txt_" & (count + 1)
+    '        Panel1.Controls.Add(textbox)
+
+    '        'Create the dynamic Button to remove the TextBox.
+    '        Dim button As Button = New Button
+    '        button.Location = New System.Drawing.Point(205, (25 * count))
+    '        button.Size = New System.Drawing.Size(25, 20)
+    '        button.Name = "btnDelete_" & (count + 1)
+    '        button.Text = "X"
+    '        button.FlatStyle = FlatStyle.Flat
+    '        button.ForeColor = Color.Red
+    '        button.Font = New Font(button.Font.Name, button.Font.Size, FontStyle.Bold)
+    '        AddHandler button.Click, AddressOf Me.btnDelete_Click
+    '        Panel1.Controls.Add(button)
+    '    End If
+    'End Sub
+
+    'Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As EventArgs)
+    '    'Reference the Button which was clicked.
+    '    Dim button As Button = CType(sender, Button)
+
+    '    'Determine the Index of the Button.
+    '    Dim index As Integer = Integer.Parse(button.Name.Split("_")(1))
+
+    '    'Find the TextBox using Index and remove it.
+    '    Panel1.Controls.Remove(Panel1.Controls.Find(("txt_" & index), True)(0))
+
+    '    'Remove the Button.
+    '    Panel1.Controls.Remove(button)
+
+    '    'Rearranging the Location controls.
+    '    For Each btn As Button In Panel1.Controls.OfType(Of Button)()
+    '        Dim controlIndex As Integer = Integer.Parse(btn.Name.Split("_")(1))
+    '        If (controlIndex > index) Then
+    '            Dim txt As TextBox = CType(Panel1.Controls.Find(("txt_" & controlIndex), True)(0), TextBox)
+    '            btn.Top = (btn.Top - 25)
+    '            txt.Top = (txt.Top - 25)
+    '        End If
+    '    Next
+    'End Sub
